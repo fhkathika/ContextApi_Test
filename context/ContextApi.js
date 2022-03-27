@@ -1,26 +1,12 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState ,useEffect} from 'react'
+import useServices from '../hookTest/useServices';
 export const TestContext=createContext()
-export  const TestProvider=(props)=> {
-    const [data, setData] = useState([
-      {
-        name: "pizza",
-        price: "620",
-        id: "1",
-      },
-      {
-        name: "Burger",
-        price: "220",
-        id: "1",
-      },
-      {
-        name: "juice",
-        price: "120",
-        id: "3",
-      },
-    ]);
-  return (
-    <TestContext.Provider value={[data, setData]}>
-      {props.children}
+export  const TestProvider=({children})=> {
+  // const [services]=useServices() 
+  const allContext=useServices()
+ return(
+    <TestContext.Provider value={allContext}>
+      {children}
     </TestContext.Provider>
   );
 }
