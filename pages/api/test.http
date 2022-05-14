@@ -1,0 +1,9 @@
+
+POST https://seller-users.hrazy.com/login  HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "email": "apon@gmail.com",
+    "password": "12345678"
+}

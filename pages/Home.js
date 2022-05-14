@@ -9,11 +9,20 @@ import useServices from '../hookTest/useServices';
   const [data,setdata]=useContext(TestContext)
   return (
     <div>
-      <h1>h welcome to home page: {data?.name}</h1>
-      {
+      <h1>h welcome to home page: {data?.length}</h1>
+      {/* {
         data.map(info=><h2>{info.name}</h2>)
+      } */}
+         {/* {
+            data.map(info=>
+                <h1 key={info.id}>
+                    {info.phone}
+                </h1>)
+        } */}
+      {  data.map(info=>
+      <h1 key={info.id}>{info.phone}</h1>)
       }
-     
+      
     </div>
   );
 }

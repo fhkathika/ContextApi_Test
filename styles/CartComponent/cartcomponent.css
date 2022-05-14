@@ -1,0 +1,26 @@
+.items-info{
+    display: flex;
+    align-items: center;
+}
+.add-minus-quantity{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+   
+}
+.input {
+    width: 50px;
+    height: 20px;
+}
+.width_200{
+    width: 300px;
+}
+.height_200{
+    height: 200px;
+}
+.width_auto{
+    width: auto;
+}
+.price{
+    margin-left: 10px;
+}
