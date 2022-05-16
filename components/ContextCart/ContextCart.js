@@ -1,21 +1,34 @@
 import React from 'react';
 import { useContext } from "react"
-import Cart from '../../components/Cart/Cart';
-import { CartContext } from '../../pages/addtocart';
+
+import { CartContext } from '../../pages/addtocart/cart';
+import Items from '../Cart/Items';
 const ContextCart = () => {
 
- const [items,setItem]  = useContext(CartContext);
-//  const {items}  = useContext(CartContext);
+//  const [items,setItem]  = useContext(CartContext);
+ const {item,clearCart,totalItem,totalAmount} = useContext(CartContext);
+ if(item.length===0){
+     return(
+         <>
+            <h1>Add To Cart</h1>
+            <section>
+       <p>shopping cart</p>
+       <p className="total_items">you have <span>0</span>items </p>
+       </section>
+         </>
+     )
+ }
     return (
         <div>
                <h1>Add To Cart</h1>
             <section>
        <p>shopping cart</p>
-       <p className="total_items">you have <span>7</span>items </p>
+       <p className="total_items">you have <span>{totalItem}</span>items </p>
        {
-           items?.map((info=>
+           item?.map((info=>
             <>
-              <Cart info={info}/>
+       
+              <Items info={info}/>
             </>
              
                
@@ -24,8 +37,8 @@ const ContextCart = () => {
           )
        }
     <div>
-        <h3>cart total : <span>2200tk</span></h3>
-        <button>checkout</button>
+        <h3>cart total : <span>{totalAmount}</span></h3>
+        <button onClick={clearCart}>clear cart</button>
     </div>
    </section>
             

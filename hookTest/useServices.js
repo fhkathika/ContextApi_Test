@@ -3,7 +3,7 @@
 const useServices =()=>{
     const [services,setServices]=useState([])
     useEffect(()=>{
-        fetch('https://radiant-fjord-34383.herokuapp.com/foodItems')
+        fetch('https://hrazy.com/flash-offers-all')
         .then(res => res.json())
         .then(data => setServices(data))
     },[services])
