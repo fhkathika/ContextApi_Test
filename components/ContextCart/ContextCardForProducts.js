@@ -4,7 +4,7 @@ import {useContext } from "react";
 
 import React from 'react';
 
-import Product from '../../components/Card/Product';
+import Product from '../Card/ItemProduct';
 import useServices from '../../hookTest/useServices';
 
 const ContextCardForProducts = () => {

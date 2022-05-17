@@ -13,7 +13,7 @@ const ContextCart = () => {
             <h1>Add To Cart</h1>
             <section>
        <p>shopping cart</p>
-       <p className="total_items">you have  <span>{totalItem}</span>   items </p>
+       <p className="total_items">you have <span>{totalItem}</span>iuouitems </p>
        </section>
          </>
      )

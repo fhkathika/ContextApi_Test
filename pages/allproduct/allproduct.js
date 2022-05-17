@@ -5,7 +5,7 @@ import {useContext } from "react";
 import React from 'react';
 import useServices from '../../hookTest/useServices';
 import { CartContext } from '../addtocart/cart';
-import Product from '../../components/Card/Product';
+import Product from '../../components/Card/ItemProduct';
 import ContextCardForProducts from '../../components/ContextCart/ContextCardForProducts';
 
 const allproduct = () => {

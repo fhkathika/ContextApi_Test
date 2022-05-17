@@ -3,7 +3,7 @@ import { useEffect, useState,useContext } from "react";
 import { CartContext } from '../../pages/addtocart/cart';
 
 
-const Product = ({singleItems}) => {
+const ItemProduct = ({singleItems}) => {
     const {name,price,id}=singleItems
     const {increment}=useContext(CartContext)
     return (
@@ -22,4 +22,4 @@ const Product = ({singleItems}) => {
     );
 };
 
-export default Product;
+export default ItemProduct;
