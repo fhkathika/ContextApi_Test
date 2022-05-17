@@ -5,7 +5,7 @@ import { CartContext } from '../../pages/addtocart/cart';
 
 const ItemProduct = ({singleItems}) => {
     const {name,price,id}=singleItems
-    const {increment}=useContext(CartContext)
+
     return (
      
             

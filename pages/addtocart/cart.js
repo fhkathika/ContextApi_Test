@@ -61,7 +61,7 @@ useEffect(()=>{
     dispatch({ type:"GET_CART" });
 
   
-},[state?.item])
+},[])
 
     return (
         <>
