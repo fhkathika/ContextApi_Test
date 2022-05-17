@@ -1,11 +1,12 @@
 import React from 'react';
 import { useEffect, useState,useContext } from "react";
-import { CartContext } from '../../pages/addtocart/cart';
+import { CartContextForProduct } from '../../pages/allproduct/allproduct';
+
 
 
 const ItemProduct = ({singleItems}) => {
     const {name,price,id}=singleItems
-
+    const { removeItem,AddItem,decrement}=useContext(CartContextForProduct)
     return (
      
             
@@ -14,7 +15,7 @@ const ItemProduct = ({singleItems}) => {
          <div className="container">
            <h4><b>{name}</b></h4> 
            <p>{price}</p> 
-           <button onClick={()=>increment(id)}>Add to cart</button>
+           <button onClick={()=>AddItem(id)}>Add to cart</button>
          </div>
        </div>
       

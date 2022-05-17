@@ -1,15 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import {useContext } from "react";
+import { createContext,useReducer,useEffect} from "react"
 
 import React from 'react';
 
-import Product from '../Card/ItemProduct';
 import useServices from '../../hookTest/useServices';
+import ItemProduct from '../Card/ItemProduct';
+import { CartContextForProduct } from '../../pages/allproduct/allproduct';
 
 const ContextCardForProducts = () => {
     const [allItems,setItem]=useServices()
-
+    const {item,clearCart,totalItem,totalAmount} = useContext(CartContextForProduct);
     return (
 
        
@@ -17,10 +19,10 @@ const ContextCardForProducts = () => {
        <h1>All Product</h1>
        <div className="card_div">
        {
-         allItems.map(singleItems=> 
+         item.map(singleItems=> 
          <>
       
-    <Product singleItems={singleItems}></Product>
+    <ItemProduct singleItems={singleItems}></ItemProduct>
       
         
          </>
