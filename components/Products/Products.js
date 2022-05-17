@@ -4,7 +4,7 @@ export const Products=[
       "name": "Leanne Graham",
       "username": "Bret",
       "price":"300",
-      "quantity":1,
+      "quantity":0,
       "email": "Sincere@april.biz",
       "address": {
         "street": "Kulas Light",
@@ -29,7 +29,7 @@ export const Products=[
       "name": "Ervin Howell",
       "username": "Antonette",
       "price":"400",
-      "quantity":1,
+      "quantity":0,
       "email": "Shanna@melissa.tv",
       "address": {
         "street": "Victor Plains",
@@ -54,7 +54,7 @@ export const Products=[
       "name": "Clementine Bauch",
       "username": "Samantha",
       "price":"400",
-      "quantity":1,
+      "quantity":0,
       "email": "Nathan@yesenia.net",
       "address": {
         "street": "Douglas Extension",
@@ -79,7 +79,7 @@ export const Products=[
       "name": "Patricia Lebsack",
       "username": "Karianne",
       "price":"340",
-      "quantity":1,
+      "quantity":0,
       "email": "Julianne.OConner@kory.org",
       "address": {
         "street": "Hoeger Mall",
@@ -104,7 +104,7 @@ export const Products=[
       "name": "Chelsey Dietrich",
       "username": "Kamren",
       "price":"210",
-      "quantity":1,
+      "quantity":0,
       "email": "Lucio_Hettinger@annie.ca",
       "address": {
         "street": "Skiles Walks",

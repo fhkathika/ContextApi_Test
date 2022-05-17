@@ -1,5 +1,5 @@
 import React from 'react';
-import { addtoDb } from '../fakeDb/Fakedb';
+import { addtoDb, getStoredCart, removeFromDb } from '../fakeDb/Fakedb';
 
 export const reducer = (state,action) => {
     if(action.type==="REMOVE_ITEM"){
@@ -52,6 +52,30 @@ export const reducer = (state,action) => {
             totalAmount:0,
         });
         return {...state,totalItem,totalAmount};
+    }
+    if(action.type==="GET_CART"){
+        if(state?.item.length){
+            const savedCart=getStoredCart();
+            const storedCart=[];
+            for(const id in savedCart){
+              
+          console.log(id,savedCart[id])
+                const addedProduct=state?.item.find(item=>item.id=== parseInt(id))
+              
+                if(addedProduct){
+                    const quantity=savedCart[id];
+                    addedProduct.quantity=quantity
+                   
+                }
+                if(addedProduct.quantity==0){
+                    removeFromDb(id)
+                }
+                storedCart.push(addedProduct)
+              
+            }
+     return {...state,item:storedCart}
+         }
+  
     }
     return state ;
 };

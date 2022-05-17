@@ -2,25 +2,31 @@ import React from 'react';
 import { createContext,useReducer,useEffect} from "react"
 
 import Cart from '../../components/Cart/Items';
+import ContextCardForProducts from '../../components/ContextCart/ContextCardForProducts';
 import ContextCart from '../../components/ContextCart/ContextCart';
-import { addtoDb, decrementFromDb, removeFromDb } from '../../components/fakeDb/Fakedb';
+import { addtoDb, decrementFromDb, getStoredCart, removeFromDb } from '../../components/fakeDb/Fakedb';
 import { Products } from '../../components/Products/Products';
 import { reducer } from '../../components/Reducer/reducer';
 
 import useServices from '../../hookTest/useServices';
 
 export const CartContext = createContext();
-const initialState = {
-    item: Products,
-    totalAmount:0,
-    totalItem:0,
-}
+
 const cart = () => {
  
  
-    // const allItems=useServices();
- 
+    const allItems=useServices();
+    const initialState = {
+        item: Products,
+        totalAmount:0,
+        totalItem:0,
+    }
        const[state,dispatch]=useReducer(reducer,initialState)
+       useEffect(()=>{
+        dispatch({ type:"GET_TOTAL" });
+    },[state.item]);
+
+
     //    delete individual element
 const removeItem=(id)=>{
     return (dispatch({
@@ -36,11 +42,13 @@ const clearCart=()=>{
     })
 }
 //increment item
-const increment=(id,name)=>{
+const increment=(id)=>{
     return (dispatch({
         type:"INCREMENT",
         payload:id,
     }),
+
+    // save to local storage
     addtoDb(id))
 }
 //decrement item
@@ -51,17 +59,17 @@ const decrement=(id)=>{
     }),decrementFromDb(id))
 }
 useEffect(()=>{
-    dispatch({ type:"GET_TOTAL" });
-console.log("total")
+    dispatch({ type:"GET_CART" });
 
-},[state.item]);
+  
+},[])
 
     return (
         <>
          {/* <CartContext.Provider value={useServices}> */}
          <CartContext.Provider value={{...state,removeItem,clearCart,increment,decrement}}>
      <ContextCart/>
-    
+    <ContextCardForProducts/>
         </CartContext.Provider>
         </>
        

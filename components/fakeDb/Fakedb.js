@@ -55,6 +55,11 @@ else{
 
 }
 
+const getStoredCart=()=>{
+    const exists=getDb();
+    return exists ? JSON.parse(exists): {};
+}
+
 // decrement from db
 const decrementFromDb=id=>{
     const exsists=localStorage.getItem('shopping_cart');
@@ -76,4 +81,4 @@ const decrementFromDb=id=>{
     localStorage.setItem('shopping_cart',JSON.stringify(shopping_cart))
 
 }
-export {addtoDb,removeFromDb,decrementFromDb}
+export {addtoDb,removeFromDb,decrementFromDb,getStoredCart}
