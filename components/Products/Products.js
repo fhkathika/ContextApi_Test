@@ -4,6 +4,7 @@ export const Products=[
       "name": "Leanne Graham",
       "username": "Bret",
       "price":"300",
+      "img":"https://i.ibb.co/3swcpMd/p2.jpg",
       "quantity":0,
       "email": "Sincere@april.biz",
       "address": {
@@ -29,6 +30,7 @@ export const Products=[
       "name": "Ervin Howell",
       "username": "Antonette",
       "price":"400",
+      "img":"https://i.ibb.co/YhD6sh2/p5.jpg",
       "quantity":0,
       "email": "Shanna@melissa.tv",
       "address": {
@@ -54,6 +56,7 @@ export const Products=[
       "name": "Clementine Bauch",
       "username": "Samantha",
       "price":"400",
+      "img":"https://i.ibb.co/JsTGwgh/p8.jpg",
       "quantity":0,
       "email": "Nathan@yesenia.net",
       "address": {
@@ -79,6 +82,7 @@ export const Products=[
       "name": "Patricia Lebsack",
       "username": "Karianne",
       "price":"340",
+      "img":"https://i.ibb.co/C9ttgYr/p9.jpg",
       "quantity":0,
       "email": "Julianne.OConner@kory.org",
       "address": {
@@ -104,6 +108,7 @@ export const Products=[
       "name": "Chelsey Dietrich",
       "username": "Kamren",
       "price":"210",
+      "img":"https://i.ibb.co/cTMFxKz/p10.jpg",
       "quantity":0,
       "email": "Lucio_Hettinger@annie.ca",
       "address": {
